@@ -1,1 +1,205 @@
-404: Not Found
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My GitHub Page - Contact</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('peakpx.jpg') no-repeat center center fixed; /* Change to your background image */
+            background-size: cover;
+            color: white;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center content horizontally */
+            justify-content: center; /* Center content vertically */
+            min-height: 100vh; /* Ensure it takes full height */
+            opacity: 0; /* Start with hidden body for fade-in effect */
+            animation: fadeIn 1s forwards; /* Fade-in animation */
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1; /* Final opacity */
+            }
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black for header */
+            width: 100%;
+            opacity: 0; /* Start with opacity 0 */
+            animation: fadeIn 1s forwards; /* Apply fade-in animation */
+            animation-delay: 0.5s; /* Delay for header */
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        nav {
+            text-align: center;
+            margin: 20px 0;
+            opacity: 0; /* Start with opacity 0 */
+            animation: fadeIn 1s forwards; /* Apply fade-in animation */
+            animation-delay: 1s; /* Delay for nav */
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            padding: 10px 15px;
+            transition: background-color 0.3s;
+            border-radius: 5px;
+        }
+
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.2); /* Hover effect */
+        }
+
+        .content {
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black for content */
+            margin: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 600px; /* Limit width for better readability */
+            opacity: 0; /* Start with opacity 0 */
+            animation: fadeIn 1s forwards; /* Apply fade-in animation */
+            animation-delay: 1.5s; /* Delay for content */
+        }
+
+        img {
+            width: 400px; /* Set larger width for the image */
+            height: auto; /* Maintain aspect ratio */
+            border-radius: 10%; /* Slightly round the corners */
+            margin: 20px 0; /* Space around the image */
+            cursor: pointer; /* Change cursor to pointer */
+            transition: transform 0.3s; /* Smooth scaling */
+        }
+
+        img:hover {
+            transform: scale(1.05); /* Scale image slightly on hover */
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black for footer */
+            width: 100%;
+            position: relative;
+            bottom: 0;
+            opacity: 0; /* Start with opacity 0 */
+            animation: fadeIn 1s forwards; /* Apply fade-in animation */
+            animation-delay: 2s; /* Delay for footer */
+        }
+
+        /* Fullscreen styles */
+        .fullscreen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            display: none; /* Initially hidden */
+            justify-content: center;
+            align-items: center;
+            opacity: 0; /* Initial opacity for fade effect */
+            transition: opacity 0.5s ease; /* Fade transition */
+        }
+
+        .fullscreen.show {
+            display: flex; /* Show the fullscreen overlay */
+            opacity: 1; /* Full opacity when shown */
+        }
+
+        .fullscreen img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10%; /* Slightly round the corners */
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Contact Information</h1>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="resume.html">Resume</a>
+        <a href="skills.html">Skills</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="content">
+        <img src="1.png" alt="resume" id="resumeImage"> <!-- Replace with your resume picture -->
+        <img src="2.png" alt="resume extra" id="resumeExtraImage"> <!-- Replace with your second resume picture -->
+        
+        <h3>Contact</h3>
+        <p>
+            <a href="tel:0138255756">
+                <img src="call.png" alt="Call" style="width: 30px; vertical-align: middle;"> <!-- Replace with your call logo -->
+                <span style="margin-left: 10px; color: white;">0138255756</span>
+            </a>
+        </p>
+        <p>
+            <a href="https://www.instagram.com/ikramhkim" target="_blank">
+                <img src="ig.png" alt="Instagram" style="width: 35px; vertical-align: middle;"> <!-- Replace with your Instagram logo -->
+                <span style="margin-left: 10px; color: white;">ikramhkim</span>
+            </a>
+        </p>
+        <p>
+            <a href="mailto:ikramhakim013@gmail.com">
+                <img src="email.png" alt="Email" style="width: 30px; vertical-align: middle;"> <!-- Replace with your email logo -->
+                <span style="margin-left: 10px; color: white;">ikramhakim013@gmail.com</span>
+            </a>
+        </p>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Ikramhakimm Page</p>
+    </footer>
+
+    <!-- Fullscreen Image Overlay -->
+    <div class="fullscreen" id="fullscreen">
+        <img src="" alt="resume fullscreen" id="fullscreenImage"> <!-- Placeholder for fullscreen image -->
+    </div>
+
+    <script>
+        // Get elements
+        const resumeImage = document.getElementById('resumeImage');
+        const resumeExtraImage = document.getElementById('resumeExtraImage');
+        const fullscreen = document.getElementById('fullscreen');
+        const fullscreenImage = document.getElementById('fullscreenImage');
+
+        // Add click event to the resume image
+        resumeImage.onclick = function() {
+            fullscreenImage.src = resumeImage.src; // Set the fullscreen image source
+            fullscreen.classList.add('show'); // Add show class to display the fullscreen overlay
+        }
+
+        // Add click event to the extra resume image
+        resumeExtraImage.onclick = function() {
+            fullscreenImage.src = resumeExtraImage.src; // Set the fullscreen image source to the extra resume image
+            fullscreen.classList.add('show'); // Add show class to display the fullscreen overlay
+        }
+
+        // Close fullscreen when clicking on the overlay
+        fullscreen.onclick = function() {
+            fullscreen.classList.remove('show'); // Remove show class to hide the fullscreen overlay
+        }
+    </script>
+
+</body>
+</html>
