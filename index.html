@@ -1,1 +1,161 @@
-404: Not Found
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ikram's Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Video background styling */
+        .video-background {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -1; /* Behind everything */
+        }
+
+        /* Header styling */
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black for header */
+            width: 100%;
+            color: white;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+        }
+
+        /* Navigation menu */
+        nav {
+            text-align: center;
+            margin: 20px 0; /* Margin for spacing */
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px; /* Adjust margin for mobile */
+            padding: 10px 15px;
+            transition: background-color 0.3s;
+            border-radius: 5px;
+            display: inline-block; /* Ensures proper click area */
+        }
+
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.2); /* Hover effect */
+        }
+
+        /* Flex container for centering logo and description */
+        .logo-container {
+            flex: 1; /* This allows the logo container to grow and take available space */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            opacity: 0; /* Initially hidden */
+            transition: opacity 2s ease; /* Fade-in effect */
+        }
+
+        .logo-container img {
+            width: 300px; /* Increase the size of the logo */
+            height: auto;
+        }
+
+        /* Description text under the logo */
+        .logo-container .description {
+            color: white;
+            font-size: 18px;
+            margin-top: 10px; /* Adjust spacing between logo and text */
+        }
+
+        /* For responsive video background */
+        @media (max-width: 768px) {
+            .video-background {
+                min-height: 100%;
+                width: auto;
+            }
+
+            .logo-container img {
+                width: 200px; /* Adjust for smaller screens */
+            }
+
+            .logo-container .description {
+                font-size: 16px; /* Adjust text size for smaller screens */
+            }
+        }
+
+        /* Footer styling */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black for footer */
+            width: 100%;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Video background -->
+    <video autoplay muted loop class="video-background">
+        <source src="try.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Welcome header -->
+    <header>
+        <h1>Welcome to My Portfolio</h1>
+    </header>
+
+    <!-- Navigation menu -->
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="resume.html">Resume</a>
+        <a href="skills.html">Skills</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <!-- Centered logo -->
+    <div class="logo-container" id="logo-container">
+        <img src="loggo.png" alt="Logo">
+        <!-- Text below the logo -->
+        <div class="description">
+            Hi, I'm Ikram Hakim, a passionate game designer and developer with a focus on creating engaging and educational games.
+        </div>
+    </div>
+
+    <!-- Footer from About Page -->
+    <footer>
+        <p>&copy; 2024 Ikramhakimm Page</p>
+    </footer>
+
+    <script>
+        // JavaScript to handle fade-in effect on page load
+        window.addEventListener('load', function() {
+            const logoContainer = document.getElementById('logo-container');
+            logoContainer.style.opacity = '1'; // Trigger the fade-in by setting opacity to 1
+        });
+    </script>
+
+</body>
+</html>
