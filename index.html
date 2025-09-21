@@ -18,13 +18,22 @@
             min-height: 100vh;
             background: url('peakpx.png') no-repeat center center fixed;
             background-size: cover;
+            color: white;
+            opacity: 0;
+            animation: fadeIn 1.5s forwards;
+        }
+
+        /* Fade-in animation */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
         /* Header styling */
         header {
             text-align: center;
             padding: 20px;
-            background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black for header */
+            background-color: rgba(0, 0, 0, 0.8);
             width: 100%;
             color: white;
         }
@@ -36,55 +45,61 @@
         /* Navigation menu */
         nav {
             text-align: center;
-            margin: 20px 0; /* Margin for spacing */
+            margin: 20px 0;
         }
 
         nav a {
             color: white;
             text-decoration: none;
-            margin: 0 10px; /* Adjust margin for mobile */
+            margin: 0 10px;
             padding: 10px 15px;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, transform 0.2s;
             border-radius: 5px;
-            display: inline-block; /* Ensures proper click area */
+            display: inline-block;
         }
 
         nav a:hover {
-            background-color: rgba(255, 255, 255, 0.2); /* Hover effect */
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: scale(1.05);
         }
 
         /* Flex container for centering logo and description */
         .logo-container {
-            flex: 1; /* This allows the logo container to grow and take available space */
+            flex: 1;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            opacity: 0; /* Initially hidden */
-            transition: opacity 2s ease; /* Fade-in effect */
+            opacity: 0;
+            transition: opacity 2s ease;
         }
 
         .logo-container img {
-            width: 300px; /* Increase the size of the logo */
+            width: 300px;
             height: auto;
+            transition: transform 0.3s ease;
+        }
+
+        /* Logo hover effect */
+        .logo-container img:hover {
+            transform: scale(1.1);
         }
 
         /* Description text under the logo */
         .logo-container .description {
-            color: white;
             font-size: 18px;
-            margin-top: 10px; /* Adjust spacing between logo and text */
+            margin-top: 10px;
         }
 
         /* Responsive adjustments */
         @media (max-width: 768px) {
             .logo-container img {
-                width: 200px; /* Adjust for smaller screens */
+                width: 200px;
             }
 
             .logo-container .description {
-                font-size: 16px; /* Adjust text size for smaller screens */
+                font-size: 16px;
             }
         }
 
@@ -92,7 +107,7 @@
         footer {
             text-align: center;
             padding: 20px;
-            background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black for footer */
+            background-color: rgba(0, 0, 0, 0.8);
             width: 100%;
             color: white;
         }
@@ -118,7 +133,6 @@
     <!-- Centered logo -->
     <div class="logo-container" id="logo-container">
         <img src="loggo.png" alt="Logo">
-        <!-- Text below the logo -->
         <div class="description">
             Hi, I'm Ikram Hakim, a passionate game designer and developer with a focus on creating engaging and educational games.
         </div>
@@ -130,12 +144,13 @@
     </footer>
 
     <script>
-        // JavaScript to handle fade-in effect on page load
+        // Fade in logo after page load
         window.addEventListener('load', function() {
             const logoContainer = document.getElementById('logo-container');
-            logoContainer.style.opacity = '1'; // Trigger the fade-in by setting opacity to 1
+            logoContainer.style.opacity = '1';
         });
     </script>
 
 </body>
 </html>
+
