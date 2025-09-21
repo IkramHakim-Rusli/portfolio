@@ -13,20 +13,11 @@
 
         body {
             font-family: Arial, sans-serif;
-            overflow: hidden;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
-        }
-
-        /* Video background styling */
-        .video-background {
-            position: fixed;
-            right: 0;
-            bottom: 0;
-            min-width: 100%;
-            min-height: 100%;
-            z-index: -1; /* Behind everything */
+            background: url('peakpx.png') no-repeat center center fixed;
+            background-size: cover;
         }
 
         /* Header styling */
@@ -86,13 +77,8 @@
             margin-top: 10px; /* Adjust spacing between logo and text */
         }
 
-        /* For responsive video background */
+        /* Responsive adjustments */
         @media (max-width: 768px) {
-            .video-background {
-                min-height: 100%;
-                width: auto;
-            }
-
             .logo-container img {
                 width: 200px; /* Adjust for smaller screens */
             }
@@ -113,12 +99,6 @@
     </style>
 </head>
 <body>
-
-    <!-- Video background -->
-    <video autoplay muted loop class="video-background">
-        <source src="try.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
 
     <!-- Welcome header -->
     <header>
@@ -144,7 +124,7 @@
         </div>
     </div>
 
-    <!-- Footer from About Page -->
+    <!-- Footer -->
     <footer>
         <p>&copy; 2024 Ikramhakimm Page</p>
     </footer>
